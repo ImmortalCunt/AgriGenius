@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agrigenius Solutions - AI-powered AgriTech, Carbon Tools, Smart Farming Systems & Consultancy Services built for the Next Gen of Growers.">
+    <meta name="keywords" content="AgriTech, Smart Farming, Carbon Tools, India Agriculture, AI Farm Tools, FPO, Satellite Farming, Agri Consultancy">
+    <title>Agrigenius Solutions | Futuristic AI-Driven Farming</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0a192f;
+            --primary-black: #020c1b;
+            --hologram-blue: #00f0ff;
+            --neon-green: #00ff99;
+            --tech-purple: #8c52ff;
+            --soft-white: #f5f5f5;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--primary-black), var(--primary-dark));
+            color: var(--soft-white);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.2);
+            border-color: var(--hologram-blue);
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+        }
+        
+        .glow-box {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+        
+        .glow-box-green {
+            box-shadow: 0 0 20px rgba(0, 255, 153, 0.3);
+        }
+        
+        .glow-box-purple {
+            box-shadow: 0 0 20px rgba(140, 82, 255, 0.3);
+        }
+        
+        .nav-glass {
+            background: rgba(10, 25, 47, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .hero-bg {
+            background: radial-gradient(circle at center, rgba(0, 240, 255, 0.1) 0%, rgba(10, 25, 47, 0) 70%);
+        }
+        
+        .section-divider {
+            position: relative;
+            height: 150px;
+            overflow: hidden;
+        }
+        
+        .section-divider::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100px;
+            background: linear-gradient(to bottom right, transparent 49%, var(--hologram-blue) 50%), linear-gradient(to bottom left, transparent 49%, var(--hologram-blue) 50%);
+            background-size: 50% 100%;
+            background-repeat: no-repeat;
+            background-position: left, right;
+        }
+        
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--soft-white);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 4s ease infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+        
+        .animate-spin-slow {
+            animation: spin 20s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--soft-white);
+            font-size: 30px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-20px) translateX(-50%); }
+            60% { transform: translateY(-10px) translateX(-50%); }
+        }
+        
+        /* Particle background */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: none;
+        }
+        
+        .slide-up {
+            transform: translateY(50px);
+        }
+        
+        .slide-left {
+            transform: translateX(-50px);
+        }
+        
+        .slide-right {
+            transform: translateX(50px);
+        }
+        
+        /* Holographic effect */
+        .holographic {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .holographic::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(0, 240, 255, 0) 0%,
+                rgba(0, 240, 255, 0.1) 20%,
+                rgba(0, 240, 255, 0) 40%
+            );
+            transform: rotate(30deg);
+            animation: holographic 6s linear infinite;
+        }
+        
+        @keyframes holographic {
+            0% { transform: rotate(30deg) translateY(-100%); }
+            100% { transform: rotate(30deg) translateY(100%); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-divider {
+                height: 80px;
+            }
+            
+            .section-divider::before {
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-glass fixed w-full z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-white mr-2 glow-text">Agrigenius</span>
+                    <span class="text-xs text-var(--hologram-blue)">Solutions</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-white hover:text-var(--hologram-blue) transition">Home</a>
+                    <a href="#services" class="text-white hover:text-var(--hologram-blue) transition">Services</a>
+                    <a href="#projects" class="text-white hover:text-var(--hologram-blue) transition">Projects</a>
+                    <a href="#team" class="text-white hover:text-var(--hologram-blue) transition">Team</a>
+                    <a href="#contact" class="text-white hover:text-var(--hologram-blue) transition">Contact</a>
+                    
+                    <div class="flex space-x-4 ml-6">
+                        <a href="https://www.linkedin.com/in/agrigenius/" class="text-white hover:text-var(--hologram-blue) transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/agrigenius.online/" class="text-white hover:text-var(--hologram-blue) transition"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/agricarbonx" class="text-white hover:text-var(--hologram-blue) transition"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/ImmortalCunt" class="text-white hover:text-var(--hologram-blue) transition"><i class="fab fa-github"></i></a>
+                        <a href="https://wa.me/919880973453" class="text-white hover:text-var(--hologram-blue) transition"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Navigation Toggle -->
+                <div class="md:hidden">
+                    <button class="hamburger focus:outline-none">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div class="md:hidden hidden bg-var(--primary-dark) w-full py-4 px-6 absolute left-0 right-0 transition-all duration-300">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="text-white hover:text-var(--hologram-blue) transition">Home</a>
+                <a href="#services" class="text-white hover:text-var(--hologram-blue) transition">Services</a>
+                <a href="#projects" class="text-white hover:text-var(--hologram-blue) transition">Projects</a>
+                <a href="#team" class="text-white hover:text-var(--hologram-blue) transition">Team</a>
+                <a href="#contact" class="text-white hover:text-var(--hologram-blue) transition">Contact</a>
+                
+                <div class="flex space-x-6 pt-4">
+                    <a href="#" class="text-white hover:text-var(--hologram-blue) transition"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-white hover:text-var(--hologram-blue) transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white hover:text-var(--hologram-blue) transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white hover:text-var(--hologram-blue) transition"><i class="fab fa-github"></i></a>
+                    <a href="#" class="text-white hover:text-var(--hologram-blue) transition"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center relative overflow-hidden pt-20">
+        <div id="particles-js"></div>
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 fade-in slide-left">
+                    <h1 class="hero-title text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
+                        <span class="glow-text">Agrigenius</span> Solutions
+                    </h1>
+                    <h2 class="text-xl md:text-2xl mb-6 text-var(--hologram-blue) font-medium">
+                        Empowering the Future of Smart Farming <span class="text-var(--neon-green)">🌱⚙️</span>
+                    </h2>
+                    <p class="text-lg mb-8 text-gray-300 max-w-lg">
+                        AI-powered AgriTech, Carbon Tools, Smart Farming Systems & Consultancy Services built for the Next Gen of Growers.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#services" class="px-8 py-3 bg-gradient-to-r from-var(--hologram-blue) to-var(--tech-purple) text-white rounded-full font-medium glow-box hover:opacity-90 transition">
+                            Explore Our Work
+                        </a>
+                        <a href="#contact" class="px-8 py-3 border border-var(--hologram-blue) text-var(--hologram-blue) rounded-full font-medium hover:bg-var(--hologram-blue) hover:text-white transition">
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-12 md:mt-0 fade-in slide-right">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-var(--hologram-blue) rounded-full opacity-20 blur-3xl animate-pulse-slow"></div>
+                        <div class="relative mx-auto max-w-md">
+                            <img src="image.png" alt="Farming AI" class="w-full h-auto animate-float">
+                            <div class="absolute -bottom-10 -left-10 w-24 h-24 bg-var(--neon-green) rounded-full opacity-20 blur-xl"></div>
+                            <div class="absolute -top-10 -right-10 w-24 h-24 bg-var(--tech-purple) rounded-full opacity-20 blur-xl"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#services" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-20 relative">
+        <div class="section-divider"></div>
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+                    Our <span class="text-var(--hologram-blue)">Innovative</span> Services
+                </h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    Cutting-edge solutions designed to revolutionize modern agriculture through technology and AI.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="glass-card rounded-xl p-6 fade-in">
+                    <div class="w-12 h-12 mb-4 rounded-full bg-gradient-to-br from-var(--hologram-blue) to-var(--tech-purple) flex items-center justify-center text-white text-xl">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">AgriCarbonX</h3>
+                    <p class="text-sm text-var(--hologram-blue) mb-3">Track, reduce & offset your farm's carbon footprint</p>
+                    <p class="text-gray-300">Comprehensive carbon management system for sustainable farming practices.</p>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="glass-card rounded-xl p-6 fade-in">
+                    <div class="w-12 h-12 mb-4 rounded-full bg-gradient-to-br from-var(--neon-green) to-var(--hologram-blue) flex items-center justify-center text-white text-xl">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">AgriTools</h3>
+                    <p class="text-sm text-var(--neon-green) mb-3">Farmer's toolbox for ROI, weather, soil & market insights</p>
+                    <p class="text-gray-300">All-in-one digital toolkit for informed agricultural decision making.</p>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="glass-card rounded-xl p-6 fade-in">
+                    <div class="w-12 h-12 mb-4 rounded-full bg-gradient-to-br from-var(--tech-purple) to-var(--neon-green) flex items-center justify-center text-white text-xl">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">FPO Connect</h3>
+                    <p class="text-sm text-var(--tech-purple) mb-3">Unified digital platform for FPOs, buyers & experts</p>
+                    <p class="text-gray-300">Connecting farmers with markets, experts and resources seamlessly.</p>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="glass-card rounded-xl p-6 fade-in">
+                    <div class="w-12 h-12 mb-4 rounded-full bg-gradient-to-br from-var(--hologram-blue) to-var(--neon-green) flex items-center justify-center text-white text-xl">
+                        <i class="fas fa-satellite"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">TerraScan</h3>
+                    <p class="text-sm text-var(--hologram-blue) mb-3">Satellite-powered farm monitoring</p>
+                    <p class="text-gray-300">Advanced remote sensing for precision agriculture and crop health analysis.</p>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="glass-card rounded-xl p-6 fade-in">
+                    <div class="w-12 h-12 mb-4 rounded-full bg-gradient-to-br from-var(--neon-green) to-var(--tech-purple) flex items-center justify-center text-white text-xl">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">EcoImpact</h3>
+                    <p class="text-sm text-var(--neon-green) mb-3">Optimize your environmental performance</p>
+                    <p class="text-gray-300">Data-driven insights to minimize ecological footprint while maximizing yield.</p>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="glass-card rounded-xl p-6 fade-in">
+                    <div class="w-12 h-12 mb-4 rounded-full bg-gradient-to-br from-var(--tech-purple) to-var(--hologram-blue) flex items-center justify-center text-white text-xl">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">GreenPrint</h3>
+                    <p class="text-sm text-var(--tech-purple) mb-3">Personalized carbon dashboard</p>
+                    <p class="text-gray-300">Real-time updates and actionable insights for sustainable farm management.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block px-6 py-3 border border-var(--hologram-blue) text-var(--hologram-blue) rounded-full font-medium hover:bg-var(--hologram-blue) hover:text-white transition">
+                    View All Services
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- AI Holographic Interface Section -->
+    <section class="py-20 bg-gradient-to-b from-var(--primary-dark) to-var(--primary-black) relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-var(--hologram-blue) rounded-full filter blur-3xl opacity-30"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-var(--tech-purple) rounded-full filter blur-3xl opacity-30"></div>
+        </div>
+        
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 fade-in slide-left">
+                    <div class="holographic glass-card rounded-2xl p-8 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-transparent via-var(--primary-dark) to-transparent"></div>
+                        <div class="relative z-10">
+                            <div class="flex justify-between items-center mb-8">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Crop Health Monitor</h3>
+                                    <p class="text-sm text-var(--hologram-blue)">Real-time Analysis</p>
+                                </div>
+                                <div class="w-16 h-16 rounded-full border-4 border-var(--neon-green) flex items-center justify-center">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-b from-var(--neon-green) to-green-700 flex items-center justify-center text-white font-bold">
+                                        87%
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-8">
+                                <div class="flex justify-between text-sm text-gray-400 mb-2">
+                                    <span>Field 12A</span>
+                                    <span>Satellite Scan: 2 min ago</span>
+                                </div>
+                                <div class="w-full h-4 bg-gray-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-var(--neon-green) to-var(--hologram-blue) rounded-full" style="width: 87%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-3 gap-4 mb-8">
+                                <div class="bg-gray-800 bg-opacity-50 rounded-lg p-3 text-center">
+                                    <div class="text-var(--hologram-blue) text-sm mb-1">Moisture</div>
+                                    <div class="text-white font-bold">62%</div>
+                                </div>
+                                <div class="bg-gray-800 bg-opacity-50 rounded-lg p-3 text-center">
+                                    <div class="text-var(--neon-green) text-sm mb-1">Nitrogen</div>
+                                    <div class="text-white font-bold">78%</div>
+                                </div>
+                                <div class="bg-gray-800 bg-opacity-50 rounded-lg p-3 text-center">
+                                    <div class="text-var(--tech-purple) text-sm mb-1">Pests</div>
+                                    <div class="text-white font-bold">12%</div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-800 bg-opacity-30 rounded-lg p-4 mb-4">
+                                <div class="flex items-start">
+                                    <div class="w-8 h-8 rounded-full bg-var(--hologram-blue) flex items-center justify-center text-white mr-3">
+                                        <i class="fas fa-robot text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-white text-sm font-medium mb-1">AgriGenius AI</div>
+                                        <div class="text-gray-300 text-sm">Recommendation: Increase irrigation by 15% in Field 12A based on soil moisture levels.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between">
+                                <button class="text-xs text-var(--hologram-blue) hover:text-white transition">View Details</button>
+                                <button class="text-xs text-var(--neon-green) hover:text-white transition">Export Report</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 lg:pl-12 fade-in slide-right">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
+                        Powering Smart Farming Decisions Through <span class="text-var(--hologram-blue)">AI</span>
+                    </h2>
+                    <p class="text-lg text-gray-300 mb-8">
+                        Our advanced AI systems analyze millions of data points to provide actionable insights, eliminating guesswork and maximizing your farm's potential.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-var(--hologram-blue) bg-opacity-20 flex items-center justify-center text-var(--hologram-blue) mr-4 mt-1">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Real-time Monitoring</h4>
+                                <p class="text-gray-400 text-sm">Satellite and IoT sensors provide up-to-the-minute field data.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-var(--neon-green) bg-opacity-20 flex items-center justify-center text-var(--neon-green) mr-4 mt-1">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Predictive Analytics</h4>
+                                <p class="text-gray-400 text-sm">AI forecasts crop yields, disease risks, and market trends.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-var(--tech-purple) bg-opacity-20 flex items-center justify-center text-var(--tech-purple) mr-4 mt-1">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Automated Reporting</h4>
+                                <p class="text-gray-400 text-sm">Generate compliance-ready carbon and sustainability reports.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="#contact" class="inline-block px-8 py-3 bg-gradient-to-r from-var(--hologram-blue) to-var(--tech-purple) text-white rounded-full font-medium glow-box hover:opacity-90 transition">
+                            Request Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects & Partnerships Section -->
+    <section id="projects" class="py-20 relative">
+        <div class="section-divider"></div>
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+                    Backed by <span class="text-var(--hologram-blue)">Innovation</span>, Built with <span class="text-var(--neon-green)">Purpose</span>
+                </h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    Collaborating with leading institutions and organizations to drive agricultural transformation.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Partner Logo 1 -->
+                <div class="glass-card rounded-xl p-6 flex items-center justify-center h-32 fade-in">
+                    <img src="https://virtigation.eu/wp-content/uploads/2021/07/UASB-logo.jpg" alt="UASB GKVK" class="max-h-16 max-w-full">
+                </div>
+                
+                <!-- Partner Logo 2 -->
+                <div class="glass-card rounded-xl p-6 flex items-center justify-center h-32 fade-in">
+                    <img src="https://www.iiitb.ac.in/csl/events/conference/RMIT2017/images/logo1.jpg" alt="IIIT Bangalore" class="max-h-16 max-w-full">
+                </div>
+                
+                <!-- Partner Logo 3 -->
+                <div class="glass-card rounded-xl p-6 flex items-center justify-center h-32 fade-in">
+                    <img src="https://accubate-prod-private.s3.ap-south-1.amazonaws.com/pusakrishi/b69bc588-f563-4741-9b8b-74b2c6bc7010?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAXFX7EGNUSQDSOKJ4%2F20250421%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20250421T201611Z&X-Amz-Expires=300000&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDwaCmFwLXNvdXRoLTEiRjBEAiA8CEAGzcsL0giqhMqJ%2FUslIQzGoiPLRVZfbENE1jRQtwIgWdoTik%2BaeOxv6xDT26dMwjVD61O1aWZzWFhLUfB%2BqKAqpAIIxf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgw0OTMzODI1NDYyODEiDG8dKsMIDxjE4T89nir4AdvQjMhqabLbd1pOplsbM1mZV0TzB69P5rWf2yv3pu6i4eG5o5XlY8qynaWF%2F%2Bit8iLVfBCHjl9MnzWfCb%2FEVr5PCkdLRFYeqEMJHIYKA0Miyo6uIxVEV8ILwCrivc47S%2BVSFQGyudhmByNITGndiFHCz%2Fxc4zcFhjF0DG8h57m%2FcoeRnwZhNV0noHfx2FWSK82xX3dnjhYZrRIZ4hYwMGibqU8LIsN%2B4WhjN7vTBnRJ484mi1kU7qzF9X4qK0VCPiJGMHls3dD55eaHckzwhLTanF2HSVKER6fmcL9JM%2BhD3Km62F20p7%2FPxelEYQDbJNJkm8H0d5S7MNC6msAGOp4BGLlgfhYgVAinnIrH9t3139RJSaqVgrCeNr%2FZ9RS8mVEQ7wnnm8ovgt5W1yyg%2B5rg0J5ki%2BKmH2v2LWPwKQVE1oiV3qIOG%2Fm5nM9vwwndoxvDWF%2BVHYT8eUSyKCUMdulXJe3uJw8egLbAOUmBTn0OOSv4dpBWwm3uBHlkpJ31lB5w11z97d%2BxbQd%2F9jjKNx2%2B09hswQ8pjBku95ce%2Bf8%3D&X-Amz-Signature=73ee56f077f2dd70aed09b8684da8d63c3bf5a9c206490eba790e23d3ef3a8b3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject" alt="Pusa Krishi" class="max-h-16 max-w-full">
+                </div>
+                
+                <!-- Partner Logo 4 -->
+                <div class="glass-card rounded-xl p-6 flex items-center justify-center h-32 fade-in">
+                    <img src="https://agrospectrumindia.com/wp-content/uploads/2023/01/Corteva-Agriscience-prnewswre.com_.jpg" alt="Corteva" class="max-h-16 max-w-full">
+                </div>
+                
+                <!-- Partner Logo 5 -->
+                <div class="glass-card rounded-xl p-6 flex items-center justify-center h-32 fade-in">
+                    <img src="https://www.bayer.in/sites/bayer_in/files/styles/16_9_aspect_ratio/public/2021-01/Product%20Logo.png?h=c74750f6&itok=9KtQBiTh" alt="Bayer" class="max-h-16 max-w-full">
+                </div>
+                
+                <!-- Partner Logo 6 -->
+                <div class="glass-card rounded-xl p-6 flex items-center justify-center h-32 fade-in">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-var(--hologram-blue) mb-1">Agri Innovation</div>
+                        <div class="text-sm text-gray-300">Pre-incubation</div>
+                    </div>
+                </div>
+                
+                <!-- Partner Logo 7 -->
+                <div class="glass-card rounded-xl p-6 flex items-center justify-center h-32 fade-in">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-var(--neon-green) mb-1">MILLAN</div>
+                        <div class="text-sm text-gray-300">Cohort</div>
+                    </div>
+                </div>
+                
+                <!-- Partner Logo 8 -->
+                <div class="glass-card rounded-xl p-6 flex items-center justify-center h-32 fade-in">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-var(--tech-purple) mb-1">PG Symposium</div>
+                        <div class="text-sm text-gray-300">UASB GKVK</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-gradient-to-b from-var(--primary-black) to-var(--primary-dark) relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+                    Meet The <span class="text-var(--hologram-blue)">Visionaries</span>
+                </h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    The brilliant minds driving innovation at Agrigenius Solutions.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="glass-card rounded-xl p-6 fade-in hover:transform hover:scale-105 transition duration-300">
+                    <div class="w-32 h-32 mx-auto mb-6 rounded-full border-4 border-var(--hologram-blue) p-1">
+                        <img src="prajwal.png" alt="Prajwal Bedavatti" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-1 text-white">Prajwal Bedavatti</h3>
+                    <p class="text-sm text-center text-var(--hologram-blue) mb-3">Co-Founder & CEO</p>
+                    <p class="text-gray-300 text-center text-sm">
+                        Founder of Agrigenius, BSc Agri @ UASB, passionate about tech-powered farming.
+                    </p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="https://www.linkedin.com/in/agrigenius/" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-var(--hologram-blue) transition">
+                            <i class="fab fa-linkedin-in text-xs"></i>
+                        </a>
+                        <a href="https://x.com/agricarbonx" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-var(--hologram-blue) transition">
+                            <i class="fab fa-twitter text-xs"></i>
+                        </a>
+                        <a href="agrigeniusai@gmail.com" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-var(--hologram-blue) transition">
+                            <i class="fas fa-envelope text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="glass-card rounded-xl p-6 fade-in hover:transform hover:scale-105 transition duration-300">
+                    <div class="w-32 h-32 mx-auto mb-6 rounded-full border-4 border-var(--neon-green) p-1">
+                        <img src="gpt.png" alt="ChatGPT-4" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-1 text-white">ChatGPT-4</h3>
+                    <p class="text-sm text-center text-var(--neon-green) mb-3">Co-Founder & CTO</p>
+                    <p class="text-gray-300 text-center text-sm">
+                        Digital Brain behind the AI systems, design, and scalability strategies.
+                    </p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-var(--neon-green) transition">
+                            <i class="fab fa-github text-xs"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-var(--neon-green) transition">
+                            <i class="fas fa-code text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="glass-card rounded-xl p-6 fade-in hover:transform hover:scale-105 transition duration-300">
+                    <div class="w-32 h-32 mx-auto mb-6 rounded-full border-4 border-var(--tech-purple) p-1">
+                        <img src="mentor.jpg" alt="Dr. K.V. Prakash" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-1 text-white">Dr. K.V. Prakash</h3>
+                    <p class="text-sm text-center text-var(--tech-purple) mb-3">Mentor</p>
+                    <p class="text-gray-300 text-center text-sm">
+                        Entomologist at UASB, offering scientific mentorship & guidance.
+                    </p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-var(--tech-purple) transition">
+                            <i class="fas fa-graduation-cap text-xs"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-var(--tech-purple) transition">
+                            <i class="fas fa-book text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="section-divider"></div>
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+                    Let's Build the <span class="text-var(--hologram-blue)">Future</span> of Agriculture Together
+                </h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    Ready to transform your farming operations with AI and cutting-edge technology? Get in touch with our team.
+                </p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2 fade-in slide-left">
+                    <div class="glass-card rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold mb-6 text-white">Send Us a Message</h3>
+                        <form>
+                            <div class="mb-6">
+                                <label for="name" class="block text-gray-300 mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full bg-gray-800 bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-var(--hologram-blue) transition">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="email" class="block text-gray-300 mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full bg-gray-800 bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-var(--hologram-blue) transition">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-300 mb-2">Your Message</label>
+                                <textarea id="message" rows="5" class="w-full bg-gray-800 bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-var(--hologram-blue) transition"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full py-3 bg-gradient-to-r from-var(--hologram-blue) to-var(--tech-purple) text-white rounded-lg font-medium glow-box hover:opacity-90 transition">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 fade-in slide-right">
+                    <div class="glass-card rounded-2xl p-8 h-full">
+                        <h3 class="text-2xl font-bold mb-6 text-white">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-var(--hologram-blue) bg-opacity-20 flex items-center justify-center text-var(--hologram-blue) mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium mb-1">Our Location</h4>
+                                    <p class="text-gray-400">Bangalore, Karnataka, India</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-var(--neon-green) bg-opacity-20 flex items-center justify-center text-var(--neon-green) mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium mb-1">Email Us</h4>
+                                    <p class="text-gray-400">agrigeniusai@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-var(--tech-purple) bg-opacity-20 flex items-center justify-center text-var(--tech-purple) mr-4">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium mb-1">WhatsApp</h4>
+                                    <p class="text-gray-400">+91 98809 73453</p>
+                                    <a href="https://wa.me/919880973453" class="inline-block mt-2 px-4 py-2 bg-var(--tech-purple) text-white rounded-full text-sm font-medium glow-box-purple hover:opacity-90 transition">
+                                        Chat Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-12">
+                            <h4 class="text-white font-medium mb-4">Connect With Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://www.linkedin.com/in/agrigenius/" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-var(--hologram-blue) transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://www.instagram.com/agrigenius.online/" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-var(--hologram-blue) transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://x.com/agricarbonx" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-var(--hologram-blue) transition">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="https://github.com/ImmortalCunt" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-var(--hologram-blue) transition">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-var(--primary-black) py-12 relative overflow-hidden">
+        <div id="particles-js-footer"></div>
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <span class="text-2xl font-bold text-white mr-2 glow-text">Agrigenius</span>
+                        <span class="text-xs text-var(--hologram-blue)">Solutions</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">Rooted in Innovation, Growing with You.</p>
+                </div>
+                
+                <div class="flex flex-wrap gap-8">
+                    <div>
+                        <h4 class="text-white font-medium mb-3">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#services" class="text-gray-400 hover:text-var(--hologram-blue) transition">Services</a></li>
+                            <li><a href="#projects" class="text-gray-400 hover:text-var(--hologram-blue) transition">Projects</a></li>
+                            <li><a href="#team" class="text-gray-400 hover:text-var(--hologram-blue) transition">Team</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-var(--hologram-blue) transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-medium mb-3">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-var(--hologram-blue) transition">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-var(--hologram-blue) transition">Terms of Service</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-var(--hologram-blue) transition">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-medium mb-3">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-var(--hologram-blue) transition"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-var(--hologram-blue) transition"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-var(--hologram-blue) transition"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-var(--hologram-blue) transition"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-500 text-sm">&copy; 2023 Agrigenius Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <a href="#home" class="fixed bottom-6 right-6 w-12 h-12 bg-var(--hologram-blue) rounded-full flex items-center justify-center text-white text-xl shadow-lg glow-box hover:bg-var(--tech-purple) transition z-50">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.md\\:hidden');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.md\\:hidden a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Change navbar style on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+                nav.classList.add('bg-opacity-90');
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.classList.remove('bg-opacity-90');
+            }
+        });
+        
+        // Particles.js configuration
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#00f0ff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.3,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#00f0ff",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+        
+        // Particles.js for footer
+        particlesJS('particles-js-footer', {
+            "particles": {
+                "number": {
+                    "value": 40,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#00f0ff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.1,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#00f0ff",
+                    "opacity": 0.1,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": false,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+        
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeInObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        fadeElements.forEach(element => {
+            fadeInObserver.observe(element);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
