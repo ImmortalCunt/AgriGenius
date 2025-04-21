@@ -2,7 +2,7 @@
 <h3 align="center">Your Smart Farming Friend – Empowering Farmers with Intelligence & Innovation</h3>
 
 <p align="center">
-  <img src="https://agrigenius.online/logo.png" alt="Agrigenius Logo" width="200"/>
+  <img src="https://agrigenius.online/prajwal.png" alt="Agrigenius Logo" width="200"/>
 </p>
 
 ---
